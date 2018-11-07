@@ -1,0 +1,73 @@
+Command line: /usr/bin/spades	-1	/data/metagenomes/160523Alm_D16-4701_1_sequence.fastq.gz	-2	/data/metagenomes/160523Alm_D16-4701_2_sequence.fastq.gz	-t	2	-m	16	--meta	-o	/home/be131-12/snow/Lab_final	
+
+System information:
+  SPAdes version: 3.12.0
+  Python version: 2.7.15
+  OS: Linux-4.15.0-23-generic-x86_64-with-Ubuntu-18.04-bionic
+
+Output dir: /home/be131-12/snow/Lab_final
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Metagenomic mode
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/data/metagenomes/160523Alm_D16-4701_1_sequence.fastq.gz']
+      right reads: ['/data/metagenomes/160523Alm_D16-4701_2_sequence.fastq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21, 33, 55]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /home/be131-12/snow/Lab_final/tmp
+  Threads: 2
+  Memory limit (in Gb): 16
+
+
+======= SPAdes pipeline started. Log can be found here: /home/be131-12/snow/Lab_final/spades.log
+
+
+===== Read error correction started. 
+
+
+== Running read error correction tool: /usr/bin/spades-hammer /home/be131-12/snow/Lab_final/corrected/configs/config.info
+
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  75)   Starting BayesHammer, built from N/A, git revision N/A
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  76)   Loading config from /home/be131-12/snow/Lab_final/corrected/configs/config.info
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  78)   Maximum # of threads to use (adjusted due to OMP capabilities): 2
+  0:00:00.000     4M / 4M    INFO    General                 (memory_limit.cpp          :  49)   Memory limit set to 16 Gb
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  86)   Trying to determine PHRED offset
+  0:00:00.001     4M / 4M    INFO    General                 (main.cpp                  :  92)   Determined value is 33
+  0:00:00.001     4M / 4M    INFO    General                 (hammer_tools.cpp          :  36)   Hamming graph threshold tau=1, k=21, subkmer positions = [ 0 10 ]
+  0:00:00.001     4M / 4M    INFO    General                 (main.cpp                  : 113)   Size of aux. kmer data 24 bytes
+     === ITERATION 0 begins ===
+  0:00:00.001     4M / 4M    INFO   K-mer Counting           (kmer_data.cpp             : 280)   Estimating k-mer count
+  0:00:00.022    36M / 36M   INFO   K-mer Counting           (kmer_data.cpp             : 285)   Processing /data/metagenomes/160523Alm_D16-4701_1_sequence.fastq.gz
+  0:27:04.129    40M / 40M   INFO   K-mer Counting           (kmer_data.cpp             : 294)   Processed 101808490 reads
+  0:27:04.129    40M / 40M   INFO   K-mer Counting           (kmer_data.cpp             : 285)   Processing /data/metagenomes/160523Alm_D16-4701_2_sequence.fastq.gz
+  0:54:02.010    40M / 40M   INFO   K-mer Counting           (kmer_data.cpp             : 294)   Processed 203616980 reads
+  0:54:02.010    40M / 40M   INFO   K-mer Counting           (kmer_data.cpp             : 299)   Total 203616980 reads processed
+  0:54:03.490    40M / 40M   INFO   K-mer Counting           (kmer_data.cpp             : 306)   Estimated 15698807912 distinct kmers
+  0:54:03.492     8M / 40M   INFO   K-mer Counting           (kmer_data.cpp             : 311)   Filtering singleton k-mers
+43 8 0
+nslots: 34359738368
+bits per slot: 8 range: 0000080000000000
+<jemalloc>: Error in calloc(): out of memory
+
+
+== Error ==  system call for: "['/usr/bin/spades-hammer', '/home/be131-12/snow/Lab_final/corrected/configs/config.info']" finished abnormally, err code: -6
+
+In case you have troubles running SPAdes, you can write to spades.support@cab.spbu.ru
+or report an issue on our GitHub repository github.com/ablab/spades
+Please provide us with params.txt and spades.log files from the output directory.
